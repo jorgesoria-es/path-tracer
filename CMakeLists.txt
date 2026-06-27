@@ -97,6 +97,7 @@ function(add_tests_from_dir DIR_NAME)
 endfunction()
 
 add_tests_from_dir(imaging imaging)
+add_tests_from_dir(sensor sensor)
 
 # tests imaging
 add_wrapped_test(test_png "imaging/png"
@@ -110,6 +111,39 @@ set(EXR_ARG "${CMAKE_SOURCE_DIR}/data/images/example_landscape.exr")
 add_wrapped_test(test_exr "imaging/exr"
     "${CMAKE_BINARY_DIR}/bin/test/test_exr" LOG BIN_ARGS "${EXR_ARG}")
 
+# tests sensor
+add_wrapped_test(T1-01-dif "sensor/T1-01-dif"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-01-dif")
+
+add_wrapped_test(T1-02-esp "sensor/T1-02-esp"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-02-esp")
+
+add_wrapped_test(T1-03-ref "sensor/T1-03-ref"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-03-ref")
+
+add_wrapped_test(T1-04-espRef "sensor/T1-04-espRef"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-04-espRef")
+
+add_wrapped_test(T1-05-mezcla "sensor/T1-05-mezcla"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-05-mezcla")
+
+add_wrapped_test(T1-06-convergencia "sensor/T1-06-convergencia"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-06-convergencia")
+
+add_wrapped_test(T1-07-convergenciaArea "sensor/T1-07-convergenciaArea"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-07-convergenciaArea")
+
+add_wrapped_test(T1-08-colorBleeding "sensor/T1-08-colorBleeding"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-08-colorBleeding")
+
+add_wrapped_test(T1-09-sombrasDuras "sensor/T1-09-sombrasDuras"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-09-sombrasDuras")
+
+add_wrapped_test(T1-10-sombrasSuaves "sensor/T1-10-sombrasSuaves"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-10-sombrasSuaves")
+
+add_wrapped_test(T1-11-causticas "sensor/T1-11-causticas"
+    "${CMAKE_BINARY_DIR}/bin/test/T1-11-causticas")
 
 # ------------------- otros targets --------------------
 
